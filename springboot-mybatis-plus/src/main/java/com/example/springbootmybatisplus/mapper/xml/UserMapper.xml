@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springbootmybatisplus.mapper.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.springbootmybatisplus.entity.User">
+        <id column="id" property="id" />
+        <result column="username" property="username" />
+        <result column="name" property="name" />
+        <result column="password" property="password" />
+        <result column="salt" property="salt" />
+        <result column="phone" property="phone" />
+        <result column="tips" property="tips" />
+        <result column="state" property="state" />
+        <result column="created_time" property="createdTime" />
+        <result column="updated_time" property="updatedTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, username, name, password, salt, phone, tips, state, created_time, updated_time
+    </sql>
+
+</mapper>
