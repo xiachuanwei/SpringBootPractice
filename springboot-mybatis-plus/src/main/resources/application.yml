@@ -3,6 +3,18 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
     username: root
     password: root
+    type: com.alibaba.druid.pool.DruidDataSource
 mybatis-plus:
-  mapper-locations: classpath*:com/example/springbootmybatisplus/mapper/xml/*.xml
+  mapper-locations: classpath:com/example/springbootmybatisplus/mapper/xml/*.xml
   type-aliases-package: classpath:com.example.springbootmybatisplus.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    default-statement-timeout: 30
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+logging:
+  file:
+    path: D:logs/spring-practice
+    name: mybaits-plus.log
+  level:
+    root: debug
+    com: debug

@@ -5,20 +5,14 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.example.springbootmybatisplus.entity.User">
         <id column="id" property="id" />
-        <result column="username" property="username" />
         <result column="name" property="name" />
-        <result column="password" property="password" />
-        <result column="salt" property="salt" />
-        <result column="phone" property="phone" />
-        <result column="tips" property="tips" />
-        <result column="state" property="state" />
-        <result column="created_time" property="createdTime" />
-        <result column="updated_time" property="updatedTime" />
+        <result column="age" property="age" />
+        <result column="email" property="email" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, username, name, password, salt, phone, tips, state, created_time, updated_time
+        id, name, age, email
     </sql>
 
 </mapper>

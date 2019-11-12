@@ -1,18 +1,13 @@
-# CREATE DATABASE IF NOT EXISTS pos default charset utf8 COLLATE utf8_general_ci;
+# create DATABASE IF NOT EXISTS test default charset utf8 COLLATE utf8_general_ci;
 # SET FOREIGN_KEY_CHECKS=0;
-# USE pos;
+# USE test;
 
 -- 用户表
-DROP TABLE IF EXISTS `t_user`;
-CREATE TABLE `t_user` (
-  `id`                        INT(11) PRIMARY KEY AUTO_INCREMENT COMMENT '主键ID',
-  `username`                  VARCHAR(32) NOT NULL COMMENT '账号',
+drop table IF EXISTS `t_user`;
+create TABLE `t_user` (
+  `id`                        INT(11) PRIMARY KEY COMMENT '主键ID',
   `name`                      VARCHAR(16) DEFAULT '' COMMENT '名字',
-  `password`                  VARCHAR(128) DEFAULT '' COMMENT '密码',
-  `salt`                      VARCHAR(64) DEFAULT '' COMMENT 'md5密码盐',
-  `phone`                     VARCHAR(32) DEFAULT '' COMMENT '联系电话',
-  `tips`                      VARCHAR(255) COMMENT '备注',
-  `state`                     TINYINT(1) DEFAULT 1 COMMENT '状态 1:正常 2:禁用',
-  `created_time`              DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_time`              DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='后台管理用户表';
+  `age`                  	  INT(11) DEFAULT NULL COMMENT '年龄',
+  `email`                     VARCHAR(32) DEFAULT '' COMMENT '邮箱'
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户表';
